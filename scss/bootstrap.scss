@@ -1,0 +1,12 @@
+// Fonts
+$bootstrap-sass-asset-helper: false;
+$icon-font-path: "../fonts/bootstrap/";
+$icon-font-name: "glyphicons-halflings-regular";
+$icon-font-svg-id: "glyphicons_halflingsregular";
+
+$input-btn-padding-y:         .375rem !default;
+$input-btn-padding-x:         .75rem !default;
+$form-group-margin-bottom:     0 !default;
+
+@import "bootstrap/_glyphicons.scss";
+@import "~bootstrap/scss/bootstrap.scss";

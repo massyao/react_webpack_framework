@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug Mode</title>
+    <!-- Bootstrap -->
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+    <!-- other css -->
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+<!-- html -->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Debug</span>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="i_ipt_url" class="col-xs-3 control-label">Url</label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" id="i_ipt_url"></div>
+                </div>
+                <div class="form-group">
+                    <label for="i_slt_method" class="col-xs-3 control-label">Method</label>
+                    <div class="col-xs-7">
+                        <select class="form-control" id="i_slt_method">
+                            <option value="get">get</option>
+                            <option value="post">post</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="i_ipt_data" class="col-xs-3 control-label">Data</label>
+                    <div class="col-xs-7">
+                        <textarea class="form-control" rows="5" id="i_ipt_data"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="i_ipt_status" class="col-xs-3 control-label">Response Status</label>
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" id="i_ipt_status" readonly></div>
+                </div>
+                <div class="form-group">
+                    <label for="i_ipt_rData" class="col-xs-3 control-label">Response Data</label>
+                    <div class="col-xs-7">
+                        <textarea class="form-control" rows="3" id="i_ipt_rData" readonly></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <div class="btn-group" style="margin-left: 520px">
+                <a class="btn btn-primary btn-lg btn-block" role="button" onclick="sendData()">Apply</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- post button -->
+</body>
+<script type="application/javascript" src="lib/jquery.min.js"></script>
+<script>
+    function sendData() {
+        $.ajax({
+            url: "ajax/Debug.w",
+            type: "post",
+            data: JSON.stringify(
+                {
+                    url: $("#i_ipt_url").val(),
+                    method: $("#i_slt_method").val(),
+                    data: $("#i_ipt_data").val()
+                }
+            ),
+            success: function (data) {
+                $("#i_ipt_status").val(data['status']);
+                $("#i_ipt_rData").val(JSON.stringify(data['data']));
+            },
+            error: function () {
+
+            }
+        });
+    }
+</script>
+</html>

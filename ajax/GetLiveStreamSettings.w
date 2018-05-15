@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "description": null,
+  "data": {
+     "input": 0,
+     "output": 0,
+     "url": "rtmp://172.16.1.254/mylive",
+     "streamname": "My_Live_Stream",
+     "presets": 0,
+     "video_input": "HDMI",
+     "audio_input": "CVBS",
+     "rtmp_enable":1,
+     "rtmp_serverip":3811062332,
+     "rtmp_serverport":"986",
+     "rtmp_appname":"qq",
+     "rtmp_streamname":"qqss",
+     "rtmp_username":"nono",
+     "rtmp_password":"noppp",
+     "video_encodetype":"H264",
+     "video_profile":"Main",
+     "video_resolution":"1600x900",
+     "framerate":6,
+     "video_bitrate":17,
+     "video_bitratemode":"CBR",
+     "video_minbitrate":0,
+     "video_maxbitrate":30,
+     "audio_encodetype":"AAC",
+     "audio_samplerate":"44.1",
+     "audio_volume":"10"
+  }
+}
